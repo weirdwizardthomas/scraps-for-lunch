@@ -1,8 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 
-from src.entity.pricny_rez.meal import Meal
 
+from src.entity.pricny_rez.meal import Meal
+from src.entity.version import Version
+
+VERSION = Version('1.0', 2022, 3, 31)
 URL = 'https://www.pricnyrez.cz/cs/poledni-menu/'
 
 

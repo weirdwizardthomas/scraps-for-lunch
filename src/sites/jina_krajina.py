@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 
 from src.entity.jina_krajina import *
+from src.entity.version import Version
+
+VERSION = Version('1.0', 2022, 4, 1)
 
 URL = 'https://reznicka.jinakrajina.cz/cs/poledni-menu/'
 
