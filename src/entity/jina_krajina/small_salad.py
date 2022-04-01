@@ -10,4 +10,3 @@ class SmallSalad(Meal):
             .split(' ')[0])
 
         self.allergens = None
-
