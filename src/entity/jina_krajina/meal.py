@@ -10,7 +10,9 @@ class Meal:
         self.allergens = None
 
     def __str__(self):
-        return f'{self.title}, {self.sold_out}, {self.price}, {self.allergens}'
+        string = f'{self.title}, {self.price}, {self.allergens}'
+
+        return strike(string) if self.sold_out else string
 
     def __repr__(self):
         return self.__str__()
