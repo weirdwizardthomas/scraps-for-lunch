@@ -1,6 +1,6 @@
-
 def strike(text):
     return ''.join([u'\u0336{}'.format(c) for c in text])
+
 
 class Meal:
     def __init__(self, elements):
@@ -16,4 +16,3 @@ class Meal:
 
     def __repr__(self):
         return self.__str__()
-

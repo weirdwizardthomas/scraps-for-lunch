@@ -1,7 +1,15 @@
 from src.sites import *
 
 if __name__ == '__main__':
+
+    print('Jina krajina')
     for course, meals in jina_krajina.get_menu().items():
-        print(course)
+        print(f'\t{course}')
         for meal in meals:
-            print(f'\t{meal}')
+            print(f'\t\t{meal}')
+
+    print('Pricny rez')
+    for course, meals in pricny_rez.get_menu().items():
+        print(f'\t{course}')
+        for meal in meals:
+            print(f'\t\t{meal}')

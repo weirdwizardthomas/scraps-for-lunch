@@ -1,1 +1,1 @@
-from . import jina_krajina
+from . import jina_krajina, pricny_rez
