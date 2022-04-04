@@ -1,0 +1,9 @@
+
+class AbstractMeal:
+    def __init__(self):
+        self.title = ...
+        self.price = ...
+        self.allergens = ...
+
+    def __str__(self):
+        return f'{self.title}, {self.price}, {self.allergens}'

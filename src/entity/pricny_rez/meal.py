@@ -1,5 +1,9 @@
-class Meal:
+from src.entity.abstract_meal import AbstractMeal
+
+
+class Meal(AbstractMeal):
     def __init__(self, elements):
+        super().__init__()
         price_element = elements.find('p', class_='cena')
 
         # Some items, such as soups, do not have their own individual price tags
@@ -10,6 +14,3 @@ class Meal:
 
         # Some items do not have allergens in their title
         self.allergens = split_title[1].strip().split(',') if len(split_title) > 1 else None
-
-    def __str__(self):
-        return f'{self.title}, {self.price}, {self.allergens}'
