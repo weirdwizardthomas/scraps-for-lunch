@@ -13,3 +13,9 @@ if __name__ == '__main__':
         print(f'\t{course}')
         for meal in meals:
             print(f'\t\t{meal}')
+
+    print('Kathmandu')
+    for course, meals in kathmandu.get_menu().items():
+        print(f'\t{course}')
+        for meal in meals:
+            print(f'\t\t{meal}')
