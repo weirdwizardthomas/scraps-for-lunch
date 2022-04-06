@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from src.entity.kathmandu.meal import Meal
 from src.entity.version import Version
 
-VERSION = Version('1.0', 2022, 4, 4)
+VERSION = Version('1.1', 2022, 4, 4)
 URL = 'https://www.restauracekathmandu.cz/denni-menu'
 
 DAYS = [
@@ -25,11 +25,15 @@ def get_menu():
     page = requests.get(URL)
     soup = BeautifulSoup(page.content, 'html.parser')
 
-    items = [x.text.strip() for x in soup.find(itemprop='articleBody').find_all('span')]
-    concatenated_items = ';'.join(items).replace('\xa0', '')
-    filtered_items = re.split(DAY_PATTERN, concatenated_items, flags=re.IGNORECASE)[2::2]
+    items = [x.text.strip() for x in soup.find(itemprop='articleBody').find_all('span') if x.text]
 
-    today = filtered_items[datetime.today().weekday()].split(';')[6:-1]
+    filtered = [x for x in items if x]
+    concatenated_items = ';'.join(filtered)
+    concatenated_items = concatenated_items.replace('\xa0', '')
+
+    split_by_day = re.split(DAY_PATTERN, concatenated_items, flags=re.IGNORECASE)[2::2]
+
+    today = split_by_day[datetime.today().weekday()].split(';')[6:-1]
 
     today_no_descriptions = [x for x in today if '(' not in x or ')' not in x]
 
