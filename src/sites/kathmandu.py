@@ -4,21 +4,14 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 
+from src import constant
 from src.entity.kathmandu.meal import Meal
 from src.entity.version import Version
 
 VERSION = Version('1.1', 2022, 4, 4)
 URL = 'https://www.restauracekathmandu.cz/denni-menu'
 
-DAYS = [
-    'MONDAY',
-    'TUESDAY',
-    'WEDNESDAY',
-    'THURSDAY',
-    'FRIDAY'
-]
-
-DAY_PATTERN = '|'.join(map(re.escape, DAYS))
+DAY_PATTERN = '|'.join(map(re.escape, constant.DAYS))
 
 
 def get_menu():

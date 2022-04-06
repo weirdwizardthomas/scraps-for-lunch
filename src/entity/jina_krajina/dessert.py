@@ -14,7 +14,5 @@ class Dessert(Meal):
                               .strip('()')  # closing bracket
                               .split(',')  # allergen values are delimited by commas
                               )
-        else:
-            self.allergens = None
 
         self.title = split_title[0].strip()

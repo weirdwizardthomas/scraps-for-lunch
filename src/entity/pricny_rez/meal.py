@@ -12,5 +12,5 @@ class Meal(AbstractMeal):
         split_title = elements.find('p', class_='nazev').text.split('/')
         self.title = split_title[0].strip()
 
-        # Some items do not have allergens in their title
-        self.allergens = split_title[1].strip().split(',') if len(split_title) > 1 else None
+        if len(split_title) > 1:
+            self.allergens = split_title[1].strip().split(',')

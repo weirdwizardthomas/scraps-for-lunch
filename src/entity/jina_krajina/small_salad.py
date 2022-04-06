@@ -8,5 +8,3 @@ class SmallSalad(Meal):
         self.title = (elements.find('div', 'title').text
             .strip()
             .split(' ')[0])
-
-        self.allergens = None
