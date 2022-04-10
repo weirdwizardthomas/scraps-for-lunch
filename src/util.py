@@ -1,5 +1,15 @@
+import datetime
+
+FRIDAY = 4
+
+
 def print_menu(name, menu):
     print(name)
+
+    if datetime.datetime.today().weekday() > FRIDAY:
+        print('\tData o víkendu jsou nedostupná vzhledem k různému času vystavení menu restauracemi.')
+        return
+
     try:
         menu = menu.get_menu()
         for course, meals in menu.items():
