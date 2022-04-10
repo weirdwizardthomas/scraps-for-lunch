@@ -1,5 +1,5 @@
 from src.entity.abstract_meal import AbstractMeal
-from src.util import strike
+from src.string_util import strike
 
 
 class Meal(AbstractMeal):

@@ -1,5 +1,5 @@
 from src.entity.abstract_meal import AbstractMeal
-from src.util import remove_whitechars
+from src.string_util import remove_whitechars
 
 
 class Meal(AbstractMeal):

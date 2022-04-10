@@ -1,5 +1,5 @@
-from src.sites import *
-
+from sites import *
+from util import print_menu
 
 if __name__ == '__main__':
     print_menu('Jina krajina', jina_krajina)
