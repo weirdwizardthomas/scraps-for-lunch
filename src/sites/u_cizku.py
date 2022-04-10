@@ -10,6 +10,7 @@ URL = 'https://www.ucizku.cz/dennimenu.php'
 
 TODAY = datetime.datetime.today().date()
 
+
 def is_today(date):
     text_split = date.text.split(' ')[1]
     date = datetime.datetime.strptime(text_split, '%d.%m.%Y')
