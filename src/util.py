@@ -7,4 +7,4 @@ def print_menu(name, menu):
             for meal in meals:
                 print(f'\t\t{meal}')
     except Exception as e:
-        print(f'\tFollowing error occurred getting the menu: {e}')
+        print(f'\tPro dnešek nebylo nalezeno menu.')

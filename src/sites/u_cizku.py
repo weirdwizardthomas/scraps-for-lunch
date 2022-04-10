@@ -26,6 +26,9 @@ def get_menu():
 
     menu_items = today_header.next_sibling.find_all('div', class_='jidlo_item')
 
+    if not menu_items:
+        raise ValueError('No menu found for today')
+
     return {
         'Všechna jídla': [Meal(item) for item in menu_items]
     }
